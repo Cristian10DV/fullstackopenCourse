@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: Confirmation of note creation
+    deactivate server
+
+    Note right of browser: User submits new note data
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: Updated list of notes
+    deactivate server
+
+    Note right of browser: Browser updates the UI to display the new note
