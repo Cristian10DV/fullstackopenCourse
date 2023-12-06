@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/
+    activate server
+    server-->>browser: SPA HTML file
+    deactivate server
+
+    Note right of browser: El navegador carga la Single Page Application (SPA) HTML
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: SPA JavaScript file
+    deactivate server
+
+    Note right of browser: El navegador ejecuta el código JavaScript de la SPA
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+    deactivate server
+
+    Note right of browser: El navegador procesa los datos recibidos y renderiza la SPA

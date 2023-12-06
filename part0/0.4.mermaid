@@ -3,8 +3,7 @@ sequenceDiagram
     participant Browser
     participant Server
     User->>Browser: Escribe texto de la nueva nota
-    Browser->>Browser: Completa el formulario
-    Browser->>Browser: Presiona el botón 'Save'
+    User->>Browser: Presiona el botón 'Save'
     Browser->>Server: Petición HTTP POST con datos de la nota
     Server->>Server: Procesa la solicitud
     Server-->>Browser: Respuesta de confirmación
