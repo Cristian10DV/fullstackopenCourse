@@ -6,13 +6,19 @@ const Header = ({ course }) => {
   );
 };
 
+const Part = ({ name, exercises }) => {
+  return (
+    <p>
+      {name} {exercises}
+    </p>
+  );
+};
+
 const Content = ({ parts }) => {
   return (
     <div>
       {parts.map((part, index) => (
-        <p key={index}>
-          {part.name} {part.exercises}
-        </p>
+        <Part key={index} name={part.name} exercises={part.exercises} />
       ))}
     </div>
   );
